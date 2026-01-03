@@ -1,0 +1,105 @@
+/* Section-specific styles for david-hckh.com layout */
+
+/* Section Grid Layout - centered model with side content */
+.section-grid {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+/* Hero Section - full width with centered content */
+.hero-section .section-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* About Section - side-by-side with model in center */
+.about-section {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.about-section .section-grid {
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 3rem;
+}
+
+/* Projects Section - traditional layout */
+.projects-section {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.projects-section .section-content {
+    max-width: 100%;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* Contact Section - centered */
+.contact-section {
+    text-align: center;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.contact-section .section-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Info Box Layout */
+.about-section .info-box-left,
+.about-section .info-box-right {
+    z-index: 10;
+}
+
+/* Model placeholder space (actual model is in 3D canvas) */
+.model-space {
+    min-height: 400px;
+    position: relative;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .section-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-section .section-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-section,
+    .projects-section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-grid {
+        gap: 1.5rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-section .section-content,
+    .contact-section .section-content {
+        padding: 0 1rem;
+    }
+}
